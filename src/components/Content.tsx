@@ -1,28 +1,9 @@
 import { MovieCard } from '../components/MovieCard';
+import { useContent } from '../hooks/useContent';
 
-interface GenreResponseProps {
-  id: number;
-  name: 'action' | 'comedy' | 'documentary' | 'drama' | 'horror' | 'family';
-  title: string;
-}
+export function Content() {
+  const { movies, selectedGenre } = useContent();
 
-interface MovieProps {
-  imdbID: string;
-  Title: string;
-  Poster: string;
-  Ratings: Array<{
-    Source: string;
-    Value: string;
-  }>;
-  Runtime: string;
-}
-
-interface ContentProps {
-  movies: MovieProps[];
-  selectedGenre: GenreResponseProps;
-}
-
-export function Content({ movies, selectedGenre }: ContentProps) {
   return (
     <div className="container">
       <header>

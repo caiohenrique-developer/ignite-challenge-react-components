@@ -1,18 +1,9 @@
 import { Button } from '../components/Button';
+import { useSideBar } from '../hooks/useSideBar';
 
-interface GenresFormat {
-  id: number;
-  name: 'action' | 'comedy' | 'documentary' | 'drama' | 'horror' | 'family';
-  title: string;
-}
-
-interface SidebarProps {
-  genres: GenresFormat[];
-  handleClickButton(id: number): void;
-  selectedGenreId: number;
-}
-
-export function SideBar({ genres, handleClickButton, selectedGenreId  }: SidebarProps) {
+export function SideBar() {
+  const { selectedGenreId, genres, handleClickButton } = useSideBar();
+  
   return (
     <nav className="sidebar">
         <span>Watch<p>Me</p></span>
