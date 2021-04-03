@@ -1,4 +1,5 @@
 import { Button } from '../components/Button';
+import { Logotipo } from '../components/Logotipo';
 import { useSideBar } from '../hooks/useSideBar';
 
 export function SideBar() {
@@ -6,7 +7,7 @@ export function SideBar() {
   
   return (
     <nav className="sidebar">
-        <span>Watch<p>Me</p></span>
+      <Logotipo />
 
       <div className="buttons-container">
         {genres.map(genre => (

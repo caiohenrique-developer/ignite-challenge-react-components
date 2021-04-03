@@ -1,14 +1,13 @@
 import { MovieCard } from '../components/MovieCard';
 import { useContent } from '../hooks/useContent';
+import { HeaderContent } from './HeaderContent';
 
 export function Content() {
-  const { movies, selectedGenre } = useContent();
+  const { movies } = useContent();
 
   return (
     <div className="container">
-      <header>
-        <span className="category">Categoria:<span> {selectedGenre.title}</span></span>
-      </header>
+      <HeaderContent />
 
       <main>
         <div className="movies-list">
